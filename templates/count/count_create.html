@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save' />
+</form> -->
+
+<!-- <form action="." method="POST"> {% csrf_token %}
+    <input type='text' name='move' placeholder="Enter what you want to move to backend"/>
+    <input type='submit' value='Save' />
+</form> -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+        <h1 class="display-4">Track your business now!</h1>
+        </div>
+    </div>
+
+    <form class="container",action="." method="POST"> {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='Save' />
+        {% if success %}
+            <small id="success" class="form-text text-muted">Successfully added!</small>
+        {% endif %}
+    </form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>In app Product template</h1>
+
+{% for sub_obj in objects %}
+    <h3>{{ sub_obj.id }}. <a href="{{ sub_obj.get_absolute_url }}">{{ sub_obj.title }}</a>, ${{ sub_obj.price }}</h3>
+    <p>{{ sub_obj.description }}</p>
+{% endfor %}
+
+{% endblock %}
