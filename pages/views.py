@@ -12,10 +12,4 @@ def contact_view(request, *args, **kwargs):
     return render(request, "contact.html", {})
 
 def about_view(request, *args, **kwargs):   
-    my_context = {                          # standard python dictionary with key (string): value
-        "my_text": "henlo this is my text", 
-        "my_number": 123, 
-        "print_list": True,
-        "my_list": [1,12,123,1234,512, "ABC"],
-    } 
     return render(request, "about.html", my_context)

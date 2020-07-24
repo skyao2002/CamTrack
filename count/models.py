@@ -18,10 +18,12 @@ class Count(models.Model):
     count           = models.PositiveSmallIntegerField(default = 0)
     enterDirection  = models.CharField(max_length=10, choices=ENTER_DIRECTIONS)
 
-    prototxt_path   = models.CharField(max_length=50, default="mobilenet_ssd/MobileNetSSD_deploy.prototxt")
-    model_path      = models.CharField(max_length=50, default="mobilenet_ssd/MobileNetSSD_deploy.caffemodel")
+    prototxt_path   = models.CharField(max_length=50, default="MobileNetSSD_deploy.prototxt")
+    model_path      = models.CharField(max_length=50, default="MobileNetSSD_deploy.caffemodel")
     confidence      = models.DecimalField(max_digits= 4, decimal_places = 4,default = 0.4)
     skip_frames     = models.PositiveSmallIntegerField(default = 30)
+    tracking        = models.BooleanField(default=False)
+    # live_img        = models.ImageField()
 
     def __str__(self):
         return self.name
