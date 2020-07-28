@@ -6,7 +6,11 @@
     <h1 class='display-1'>Current number: {{ object.count }}</h1>
     <p>Currently Tracking: {{ object.tracking }}</p>
     <form action="." method="POST"> {% csrf_token %}
-        <button type="submit">Stop Recording</button>
+        {% if object.tracking %}
+            <button type="submit" name="stop" value="Stop Recording">&nbsp;Stop Recording</button>
+        {% else %}
+            <button type="submit" name="start" value="Start Recording">&nbsp;Start Recording</button>
+        {% endif %}
     </form>
     <meta http-equiv="refresh" content="5">
 </div>

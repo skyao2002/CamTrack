@@ -31,7 +31,7 @@ class PeopleCounter(threading.Thread):
 		"sofa", "train", "tvmonitor"]
 	def __init__(self, threadID, name, **args):
 		threading.Thread.__init__(self)
-		self.object = Count.objects.get(id=threadID)
+		self.object = Count.objects.get(name=name)
 		self.threadID = threadID
 		self.name = name
 		self.args = args
@@ -237,7 +237,7 @@ class PeopleCounter(threading.Thread):
 if __name__=="__main__":
 
 	try:
-		home_counter = PeopleCounter(threadID=1, name="home_cam",prototxt='mobilenet_ssd/MobileNetSSD_deploy.prototxt', 
+		home_counter = PeopleCounter(threadID=1, name="home",prototxt='mobilenet_ssd/MobileNetSSD_deploy.prototxt', 
 			model='mobilenet_ssd/MobileNetSSD_deploy.caffemodel', 
 			input='http://admin:750801@98.199.131.202/videostream.cgi?rate=0', 
 			output=None,

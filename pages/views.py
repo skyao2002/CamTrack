@@ -12,4 +12,4 @@ def contact_view(request, *args, **kwargs):
     return render(request, "contact.html", {})
 
 def about_view(request, *args, **kwargs):   
-    return render(request, "about.html", my_context)
+    return render(request, "about.html", {})
