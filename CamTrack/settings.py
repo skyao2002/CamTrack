@@ -24,7 +24,7 @@ MODELS = os.path.join(BASE_DIR, 'count\people_tracking\ml_models\\')
 SECRET_KEY = '&j7lz)$z3(7_f+!yja6^36wg#z^od=vj&%(z7(yzh)dk7@)vup'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'stevenyao.pythonanywhere.com']
 
